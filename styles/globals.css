@@ -1,0 +1,124 @@
+:root{
+
+
+  /*dimensions*/
+
+  --app-width:60rem;
+  --app-bar-height:3rem;
+
+  /*primary colors*/
+
+  --accent-1:rgb(255, 255, 255);
+  --accent-2:rgb(245, 245, 245);
+  --accent-3:rgb(224, 224, 224);
+  --accent-4:rgb(200, 200, 200);
+  --accent-5:rgb(175, 175, 175);
+  --accent-6:rgb(156, 156, 156);
+  --accent-7:rgb(83, 83, 83);
+  --accent-8:rgb(68, 68, 68);
+  --accent-9:rgb(38, 37, 37);
+  --accent-10:rgb(0, 0, 0);
+
+  --primary-shade-1:rgb(0, 129, 173);
+  --primary-shade-2:rgb(38, 177, 223);
+  --primary-shade-3:rgb(0, 129, 173);
+
+  /*secondary colors*/
+  --success:rgb(127, 203, 149);
+  --success-emphasis:rgb(4, 116, 4);
+  --error:rgb(250, 144, 144);
+  --error-emphasis:rgb(110, 5, 5);
+  --alert:rgb(255, 255, 170);
+  --alert-emphasis:rgb(222, 219, 18);
+
+  /*spacing*/
+  --space-1:0.2rem;
+  --space-2:0.4rem;
+  --space-3:0.6rem;
+  --space-4:0.8rem;
+  --space-5:1rem;
+  --space-6:1.2rem;
+  --space-7:1.4rem;
+  --space-8:1.6rem;
+  --space-9:1.8rem;
+  --space-10:2.0rem;
+  --space-11:2.2rem;
+  --space-12:2.4rem;
+
+  /*typography
+    headings
+  */
+
+  --h1:48px;
+  --h2:40px;
+  --h3:32px;
+  --h4:24px;
+  --h5:20px;
+  --h6:16px;
+  --h7:12px;
+
+  /*box shadows*/
+
+  --box-shadow-1:var(--accent-1) 0px 2px 5px -1px, var(--accent-8) 0px 1px 3px -1px;
+
+  /*misc*/
+
+  --icon-size-1:60px;
+  --icon-size-2:50px;
+  --icon-size-3:40px;
+  --icon-size-4:30px;
+  --icon-size-5:20px;
+
+
+  --primary-border-radius:4px;
+  --secondary-border-radius:16px;
+
+
+  --button-outline-width:2px;
+
+  --overlay-bg:rgb(0, 0, 0,0.7);
+
+  /*screen breakpoints*/
+
+  --screen-tablet:720px;
+  --screen-large_phone:544px;
+  --screen-small-phone:400px;
+
+
+}
+
+
+html{
+  color: var(--accent-9);
+  font-family: Verdana, sans-serif;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button{
+  border: none;
+  outline: none;
+  background-color: none;
+}
+
+
+
+/*
+
+  --accent-1:rgb(255, 255, 255);
+  --accent-2:rgb(245, 245, 245);
+  --accent-3:rgb(224, 224, 224);
+  --accent-4:rgb(200, 200, 200);
+  --accent-5:rgb(175, 175, 175);
+  --accent-6:rgb(156, 156, 156);
+  --accent-7:rgb(83, 83, 83);
+  --accent-8:rgb(68, 68, 68);
+  --accent-9:rgb(38, 37, 37);
+  --accent-10:rgb(0, 0, 0);
+*/
+
+

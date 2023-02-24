@@ -1,0 +1,13 @@
+.content_wrapper{
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--app-bar-height);
+}
+
+.content_container{
+    width: 100%;
+    max-width: var(--app-width);
+}

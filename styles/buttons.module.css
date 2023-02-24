@@ -1,0 +1,29 @@
+.wrapper{
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: var(--primary-border-radius);
+    padding: var(--space-2) var(--space-3);
+    opacity: 0.8;
+    outline: 1px solid transparent;
+    margin: var(--space-2);
+    transition: 0.3s ease-in-out;
+}
+
+.primary{
+    background-color: var(--primary-shade-1);
+    color: var(--accent-1);
+}
+
+.secondary{
+    background-color: var( --accent-3);
+}
+
+.wrapper:hover,.wrapper:focus{
+    opacity: 1;
+}
+
+.wrapper:focus{
+    outline: var(--button-outline-width) solid var(--primary-shade-2);
+}
