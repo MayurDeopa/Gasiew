@@ -2,7 +2,7 @@
     flex-direction: column;
     transition:  0.3s ease-in-out;
     border-radius:0 0  4px 4px;
-    background-color: var(--accent-2);
+    background-color: var(--accent-1);
 }
 
 .header{
@@ -15,6 +15,7 @@
     position: relative;
     height:2.5rem;
     min-width: 4rem;
+    font-size: var(--h6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,10 +27,6 @@
 .active{
     color: var(--primary-shade-1);
 }
-
-
-
-
 
 .active::before{
     content: '';

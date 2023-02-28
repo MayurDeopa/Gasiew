@@ -23,6 +23,7 @@
 .modal{
     overflow-y: auto;
     background-color: var(--accent-3);
+    border-radius: var(--border-radius-1);
 }
 
 .drawer{
@@ -31,7 +32,7 @@
     max-width: 100%;
     z-index: 1000;
     background-color: var(--accent-3);
-    border-radius: var(--primary-border-radius);
+    border-radius: var(--border-radius-1);
     transition: 0.3s ease-in-out;
 }
 

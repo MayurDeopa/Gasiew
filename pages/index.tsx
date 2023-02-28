@@ -1,18 +1,20 @@
-import {FiCrop, FiSmile} from 'react-icons/fi'
+import CreatePostForm from "@/components/common/create/CreatePostForm";
+import { Button } from "@/components/form";
+import { useAuthState } from "@/context/auth/AuthProvider";
 
-import { Form, IconWrapper } from '@/components'
-import { useState } from 'react'
-import rawer from '@/components/overlays/modal/Modal'
-import Drawer from '@/components/overlays/drawer/Drawer'
-import { Tab } from '@/components/misc'
 
 
 export default function Home() {
 
 
+  const authState = useAuthState()
 
   return (
+
+    
+
    <div>
+      
    </div>
   )
 }

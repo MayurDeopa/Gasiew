@@ -19,9 +19,9 @@
   --accent-9:rgb(38, 37, 37);
   --accent-10:rgb(0, 0, 0);
 
-  --primary-shade-1:rgb(0, 129, 173);
-  --primary-shade-2:rgb(38, 177, 223);
-  --primary-shade-3:rgb(0, 129, 173);
+  --primary-shade-1:rgb(0, 72, 173);
+  --primary-shade-2:rgb(0, 59, 142);
+  --primary-shade-3:rgb(3, 49, 112);;
 
   /*secondary colors*/
   --success:rgb(127, 203, 149);
@@ -70,8 +70,8 @@
   --icon-size-5:20px;
 
 
-  --primary-border-radius:4px;
-  --secondary-border-radius:16px;
+  --border-radius-1:4px;
+  --border-radius-2:16px;
 
 
   --button-outline-width:2px;
@@ -99,10 +99,14 @@ html{
   box-sizing: border-box;
 }
 
-button{
+button,input{
   border: none;
   outline: none;
-  background-color: none;
+  background-color: transparent;
+}
+
+a{
+  text-decoration: none;
 }
 
 

@@ -2,6 +2,7 @@ import Modal from "@/components/overlays/modal/Modal"
 import { Tab } from "@/components/misc"
 
 import React from "react"
+import { Login, Register } from "../auth"
 
 type AuthModalProps={
     open:boolean,
@@ -21,19 +22,19 @@ const AuthModal:React.FC<AuthModalProps> = ({open,onClose})=>{
               items={[
                 {
                   'label':'Login',
-                  'key':1,
-                  "content":<p>Login</p>
+                  'key':0,
+                  "content":<Login/>
                 },
                 {
-                  'label':'SignUp',
-                  'key':2,
-                  "content":<p>Signup</p>
+                  'label':'Register',
+                  'key':1,
+                  "content":<Register/>
                 }
               ]}
               style={{
-                width:'30rem',
+                width:'35rem',
                 maxWidth:'100%',
-                height:'40rem'
+                height:'auto'
               }}
             />
         </Modal>
