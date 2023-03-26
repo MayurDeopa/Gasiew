@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, { CSSProperties } from 'react'
 import NextStyles from '../../styles/buttons.module.css'
 import LoadingDots from '../feedback/loadingdots/LoadingDots'
@@ -9,6 +10,7 @@ interface ButtonProps {
     loading?:boolean
     styles?:CSSProperties
     disabled?:boolean
+    url?:string
 }
 
 
@@ -54,17 +56,20 @@ export const Secondary:React.FC<ButtonProps> = (props)=>{
 
 
 
-export const Link:React.FC<ButtonProps> = (props)=>{
+export const LinkBtn:React.FC<ButtonProps> = (props)=>{
 
     const{
 
-        text="Button"
+        text="Button",
+        url ='/'
 
     } =props
 
     return(
-        <button className={NextStyles.wrapper}>
-            {text}
-        </button>
+        <Link href={url}>
+            <button className={NextStyles.wrapper}>
+                {text}
+            </button>
+        </Link>
     )
 }

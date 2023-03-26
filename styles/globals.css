@@ -3,7 +3,7 @@
 
   /*dimensions*/
 
-  --app-width:60rem;
+  --app-width:70rem;
   --app-bar-height:3rem;
 
   /*primary colors*/
@@ -60,6 +60,7 @@
   /*box shadows*/
 
   --box-shadow-1:var(--accent-1) 0px 2px 5px -1px, var(--accent-8) 0px 1px 3px -1px;
+  --box-shadow-2: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 
   /*misc*/
 
@@ -90,7 +91,7 @@
 
 html{
   color: var(--accent-9);
-  font-family: Verdana, sans-serif;
+  font-family: Verdana,sans-serif;
 }
 
 *{
@@ -99,14 +100,17 @@ html{
   box-sizing: border-box;
 }
 
-button,input{
+button,input,textarea{
   border: none;
   outline: none;
   background-color: transparent;
 }
 
+
+
 a{
   text-decoration: none;
+  color: var(--accent-9);
 }
 
 

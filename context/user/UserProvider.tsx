@@ -9,6 +9,7 @@ interface UserContextProps{
     currentUserProfile:{}
     isRestricted:boolean
     settings:{}
+    isLoading:boolean
 }
 
 interface UserDispatchContextProps{
@@ -28,6 +29,7 @@ const userContextInitialState ={
     currentUserProfile:{},
     isRestricted:false,
     settings:{},
+    isLoading:false
 }
 
 const UserStateContext = createContext<UserContextProps>(userContextInitialState)

@@ -1,0 +1,47 @@
+.overlay{
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    z-index: 999;
+    transition: 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.overlay_hidden{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay_container{
+    background-color:var(--overlay-bg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1 ;
+}
+
+.guide{
+    position: absolute;
+    box-shadow: 0 0 0 999em rgb(0 0 0 / 50%);
+    z-index: 1;
+    transition: 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from{
+        visibility: hidden;
+        opacity: 0;
+    }
+    to{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+

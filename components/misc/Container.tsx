@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import NextStyles from '../../styles/misc.module.css'
 
 
 interface ContainerProps extends React.ComponentPropsWithoutRef<'div'>{
-    children?:JSX.Element[] | JSX.Element
+    children?:ReactNode[] | ReactNode
 
 }
 

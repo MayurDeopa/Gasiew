@@ -13,7 +13,7 @@ interface InputProps{
     type?:inputType
     maxWidth?:string
     autoFocus?:boolean
-    action:React.FormEventHandler<HTMLInputElement> |undefined
+    action:React.FormEventHandler<HTMLElement> |undefined
     value:inputValue
     forLabel?:string
     disabled?:boolean
@@ -51,6 +51,18 @@ const Input:React.FC<InputProps> =(props)=>{
                         <p>Select image</p>
                     </div>
                     <input className={NextStyles.file_input} value={value} disabled={disabled} required={required} onChange={action} placeholder={placeholder} autoFocus={autoFocus} type={type} name={forLabel}/>
+                </label>
+            </Container>
+        )
+    }
+    if(type=='textarea'){
+        return(
+            <Container style={{
+                flexDirection:'column'
+            }}>
+                <React.Fragment>{title && <p>{title}</p>}</React.Fragment>
+                <label htmlFor={forLabel} className={NextStyles.file_label} style={{maxWidth:maxWidth}}>
+                    <textarea className={NextStyles.input} value={value} disabled={disabled} required={required} onChange={action} placeholder={placeholder} autoFocus={autoFocus}  name={forLabel}/>
                 </label>
             </Container>
         )

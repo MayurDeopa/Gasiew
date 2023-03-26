@@ -25,6 +25,8 @@ export const authContextInitialState ={
         case "INIT_REQUEST":
             return{
                 ...authState,
+                isAuthorized:false,
+                user:{},
                 isLoading:true,
                 isError:false
             }
@@ -37,6 +39,13 @@ export const authContextInitialState ={
                 user:action.payload.data,
                 isAuthorized:true
             }
+
+        case "REGISTER_SUCCESS":
+            return{
+                ...authState,
+                isLoading:false
+            }
+
         case "ERROR":
             return{
                 ...authState,

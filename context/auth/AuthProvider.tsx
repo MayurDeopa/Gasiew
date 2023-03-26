@@ -32,7 +32,6 @@ const AuthProvider =({children}:AuthProviderProps)=>{
     const [authState,dispatch] = useReducer(authReducer,authContextInitialState)
 
     useEffect(()=>{
-        console.log('effect')
         let token = localStorage.getItem('authToken')
         if(token){
            bootstrapUser(dispatch)

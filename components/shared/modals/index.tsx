@@ -1,5 +1,6 @@
 import AuthModal from "./AuthModal";
 import React, { createContext, useContext, useState } from "react";
+import CreateModal from "./CreateModal";
 
 
 
@@ -8,6 +9,8 @@ interface GlobalModalContext  {
     setShowAuthModal:(show:boolean)=>void
     showCookieModal:boolean
     setShowCookieModal:(show:boolean)=>void
+    showCreateModal:boolean
+    setShowCreateModal:(show:boolean)=>void
    };
 
 interface ProviderProps{
@@ -18,7 +21,9 @@ const initalModalStates:GlobalModalContext = {
     showAuthModal:false,
     setShowAuthModal:()=>{},
     showCookieModal:false,
-    setShowCookieModal:()=>{}
+    setShowCookieModal:()=>{},
+    showCreateModal:false,
+    setShowCreateModal:()=>{}
 }
 
 
@@ -36,9 +41,10 @@ const GlobalModalsProvider:React.FC<ProviderProps> = ({children})=>{
 
     const [authModal,setAuthModal] = useState(false)
     const [cookieModal,setCookieModal] = useState(false)
-
+    const [createModal,setCreateModal] = useState(false)
     const setShowAuthModal =(show:boolean)=>setAuthModal(show)
     const setShowCookieModal =(show:boolean)=>setCookieModal(show)
+    const setShowCreateModal =(show:boolean)=>setCreateModal(show)
 
 
     return(
@@ -46,9 +52,12 @@ const GlobalModalsProvider:React.FC<ProviderProps> = ({children})=>{
             showAuthModal:authModal,
             setShowAuthModal:setShowAuthModal,
             showCookieModal:cookieModal,
-            setShowCookieModal:setShowCookieModal
+            setShowCookieModal:setShowCookieModal,
+            showCreateModal:createModal,
+            setShowCreateModal:setShowCreateModal
         }}>
             <AuthModal open={authModal} onClose={()=>setAuthModal(false)}/>
+            <CreateModal open={createModal} onClose={()=>setCreateModal(false)}/>
             {children}
         </GlobalModals.Provider>
     )

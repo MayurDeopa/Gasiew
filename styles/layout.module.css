@@ -5,6 +5,8 @@
     justify-content: center;
     align-items: center;
     margin-top: var(--app-bar-height);
+    background-color: var(--accent-2);
+
 }
 
 .content_container{

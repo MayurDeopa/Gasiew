@@ -1,7 +1,6 @@
 import { Form } from "@/components"
 import { loginUser } from "@/context/auth/actions";
 import { useAuthAction, useAuthState } from "@/context/auth/AuthProvider";
-import client from "@/lib/api/client";
 import { useState } from "react";
 
 import {AiOutlineMail,AiOutlineLock} from 'react-icons/ai'
@@ -17,7 +16,7 @@ const Login = ()=>{
     const [password,setPassword] = useState('')
 
 
-    const action =async()=>{
+    const action =()=>{
         loginUser(dispatch,{email:email,password:password},()=>modals.setShowAuthModal(false)) 
     }
 

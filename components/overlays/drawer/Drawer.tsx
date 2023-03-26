@@ -1,5 +1,5 @@
 import Portal from "@/components/portal"
-import React, { CSSProperties, } from "react"
+import React, { CSSProperties, ReactNode, } from "react"
 import {useTransition} from "../../../lib/hooks"
 
 import Nextstyles from '../../../styles/overlay.module.css'
@@ -8,7 +8,7 @@ type position = 'right' | 'left' | 'bottom' | 'top'
 
 interface DrawerProps{
     container?:string
-    children?:JSX.Element | JSX.Element[]
+    children?:ReactNode | ReactNode[]
     open?:boolean,
     onClose?:()=>void,
     loading?:boolean,

@@ -31,7 +31,7 @@ const AuthModal:React.FC<AuthModalProps> = ({open,onClose})=>{
                   "content":<Register/>
                 }
               ]}
-              style={{
+              styles={{
                 width:'35rem',
                 maxWidth:'100%',
                 height:'auto'

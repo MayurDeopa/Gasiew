@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from '../../../styles/feedback.module.css'
 
 
@@ -9,9 +9,10 @@ interface SkeletonProps{
 }
 
 const Skeleton:React.FC<SkeletonProps> = ({height='2rem',width='10rem'})=>{
+
     return(
         <div className={styles.skeleton} style={{height:height,width:width}}>
-
+            
         </div>
     )
 }

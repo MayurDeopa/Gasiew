@@ -1,4 +1,5 @@
 import React, { FormEvent, FormEventHandler } from "react";
+import clsx from "clsx";
 
 import NextStyles from '../../styles/form.module.css'
 
@@ -6,9 +7,10 @@ interface FormProps {
     children:JSX.Element | JSX.Element[]
     action:()=>void
     styles?:{}
+    classNames?:{}
 }
 
-const Form:React.FC<FormProps> =({children,action,styles,...props})=>{
+const Form:React.FC<FormProps> =({children,action,styles,classNames,...props})=>{
 
     const onSubmit =(e:React.FormEvent)=>{
         e.preventDefault()
@@ -18,7 +20,7 @@ const Form:React.FC<FormProps> =({children,action,styles,...props})=>{
     return(
         <form
             onSubmit={onSubmit}
-            className={NextStyles.wrapper}
+            className={clsx(NextStyles.wrapper,classNames)}
             style={styles}
             {...props}
         >

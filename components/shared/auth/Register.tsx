@@ -1,17 +1,26 @@
 import { Form } from "@/components"
+import { registerUser } from "@/context/auth/actions";
+import { useAuthAction, useAuthState } from "@/context/auth/AuthProvider";
 import { useState } from "react";
 
 import {AiOutlineMail,AiOutlineLock, AiOutlineUser} from 'react-icons/ai'
 
 const Register = ()=>{
 
+    const {dispatch} = useAuthAction()
+    const {isLoading} = useAuthState()
+
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
     const [username,setUsername] = useState('')
 
 
+    const action = ()=>{
+        registerUser(dispatch,{email,password,username})
+    }
+
     return(
-        <Form.Form styles={{width:'100%',justifyContent:'center'}} action={()=>alert('done')}>
+        <Form.Form styles={{width:'100%',justifyContent:'center'}} action={action}>
             <Form.Input 
                 type={'email'} 
                 prefix={<AiOutlineMail/>} 
@@ -41,7 +50,7 @@ const Register = ()=>{
                 maxWidth="100%" 
                 required
             />
-            <Form.Button.Primary type='submit' text="Register" />
+            <Form.Button.Primary type='submit' text="Register" loading={isLoading}/>
         </Form.Form>
     )
 }

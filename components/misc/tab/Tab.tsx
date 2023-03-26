@@ -30,13 +30,17 @@ export type TabItem={
 
 }
 
-export interface TabProps extends React.ComponentPropsWithoutRef<'div'>{
+export interface TabProps{
     defaultActiveKey?:number
     items:TabItem[]
     withLink?:boolean
     linkQuery?:string
+    styles?:{}
 }
 
+export interface TabContentProps{
+    element:JSX.Element
+}
 
 
 const TabLabel:React.FC<TabLabelProps> =({
@@ -87,22 +91,22 @@ const TabLabelWithLink:React.FC<TabLabelWithLinkProps> =({
 
 
 
+const TabContent:React.FC<TabContentProps> = ({element})=>{
+    return element
+}
+
 const Tab:React.FC<TabProps> =({
     defaultActiveKey = 0,
     items,
     withLink = false,
     linkQuery='tab',
-    ...props
+    styles
 })=>{
 
     if(!defaultActiveKey)defaultActiveKey = 0
 
     const [activeTab,setActiveTab] = useState<number >(defaultActiveKey )
 
-    const getActiveTab =(a:number)=>{
-        if(Number.isNaN(a) || a>items.length - 1 || a<=0 ) return items[0].content
-        return items[a].content
-    }
 
 
     const isActive =(a:number)=>a ==activeTab
@@ -115,7 +119,7 @@ const Tab:React.FC<TabProps> =({
         return(
             <div
                 className={NextStyles.wrapper}
-                {...props}
+                style={styles}
             >
                 <Container
                     className={NextStyles.header}        
@@ -147,7 +151,14 @@ const Tab:React.FC<TabProps> =({
                     }}
                 >
                     
-                    {getActiveTab(defaultActiveKey)}
+                    {items.map((i,index)=>{
+                    if(i.key==defaultActiveKey){
+                        return <TabContent key={index} element={i.content}/>
+                    }
+                    return(
+                        <React.Fragment key={index}/>
+                    )
+                })}
                 </Container>
             </div>
         )
@@ -156,11 +167,9 @@ const Tab:React.FC<TabProps> =({
     return(
         <div
             className={NextStyles.wrapper}
-            {...props}
+            style={styles}
         >
-            <Container
-                className={NextStyles.header}        
-            >
+            <Container>
                 
             {
                 items?.map((i,index)=>{
@@ -182,11 +191,18 @@ const Tab:React.FC<TabProps> =({
                 style={{
                     justifyContent:'center',
                     alignItems:'center',
-                    marginTop:'10px'
+                    marginTop:'10px',
                 }}
             >
                 
-                {getActiveTab(activeTab)}
+                {items.map((i,index)=>{
+                    if(i.key==activeTab){
+                        return <TabContent key={index} element={i.content}/>
+                    }
+                    return(
+                        <React.Fragment key={index}/>
+                    )
+                })}
             </Container>
         </div>
     )

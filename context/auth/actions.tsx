@@ -18,6 +18,18 @@ export const loginUser =async(dispatch:React.Dispatch<any>,payload:any,callback:
         }
 }
 
+export const registerUser =async(dispatch:React.Dispatch<any>,payload:any)=>{
+
+
+    dispatch({type:'INIT_REQUEST'})
+        const {data,success,err} = await client({url:'auth/register',method:"post",payload:payload})
+        if(success){
+            dispatch({type:'REGISTER_SUCCESS',payload:data})
+        }
+        else{
+            dispatch({type:'ERROR',payload:err})
+        }
+}
 
 export const bootstrapUser =async(dispatch:React.Dispatch<any>)=>{
     const token:any = getToken()

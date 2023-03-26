@@ -1,4 +1,6 @@
 .skeleton{
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,6 +10,7 @@
     animation:skeleton 4s linear infinite;
     -webkit-animation: skeleton 3s linear infinite;
 }
+
 
 
 .spinner_wrapper{
@@ -59,3 +62,12 @@
         stroke-dashoffset: -124;
       }
 }
+
+@keyframes wave {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }

@@ -23,8 +23,17 @@ import { userReducerTypes } from "../reducerType"
                     currentProfile:data.profile
                 }
             }
-            
-           
+        case 'INIT_REQUEST':
+            return{
+                ...userState,
+                isLoading:true
+            }
+        
+        case 'FINISH_REQUEST':
+            return{
+                ...userState,
+                isLoading:false
+            }
         default:
             return userState
     }
