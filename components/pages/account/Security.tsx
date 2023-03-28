@@ -1,5 +1,5 @@
 import AccountWrapper from "./AccountLayout"
-import ChangePasswordForm from "./ChangePasswordForm"
+import ChangePasswordForm from "./security/ChangePasswordForm"
 
 
 const Profile =()=>{

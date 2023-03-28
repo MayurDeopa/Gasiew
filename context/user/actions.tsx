@@ -10,23 +10,21 @@ export const uploadPost =async(dispatch:React.Dispatch<any>,payload:any)=>{
             fileName:file.fileName
         })
         if(imageData){
-            console.log('uploaded')
-        }
-        else{
-            console.log(error)
+            let {data,success,err} = await client({url:'post/create',method:'post',payload:{
+                image:{
+                    url:imageData?.url,
+                    height:imageData?.height,
+                    width:imageData?.width
+                },
+                post:{
+                    title:post.title,
+                    caption:post.caption
+                }
+            },token:token})
             dispatch({type:'FINISH_REQUEST'})
         }
-        let {data,success,err} = await client({url:'post/create',method:'post',payload:{
-            image:{
-                url:imageData?.url,
-                height:imageData?.height,
-                width:imageData?.width
-            },
-            post:{
-                title:post.title,
-                caption:post.caption
-            }
-        },token:token})
-        console.log(data)
-        dispatch({type:'FINISH_REQUEST'})
+        else{
+            dispatch({type:'FINISH_REQUEST'})
+        }
+        
 }

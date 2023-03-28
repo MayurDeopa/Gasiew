@@ -4,7 +4,7 @@ import { AiOutlineCloud, AiOutlineCloudUpload } from "react-icons/ai";
 import NextStyles from '../../styles/form.module.css'
 import { Container } from "../misc";
 
-type inputType = 'textarea' | 'text' | 'password' | 'search' | 'number' | 'url'|'date' |'email' | 'file'
+type inputType = 'textarea' | 'text' | 'password' | 'search' | 'number' | 'url'|'date' |'email' | 'file' | 'image'
 
 type inputValue = string | number
 
@@ -39,7 +39,7 @@ const Input:React.FC<InputProps> =(props)=>{
         title
     } = props
 
-    if(type=='file'){
+    if(type=='file' || type =='image'){
         return(
             <Container style={{
                 flexDirection:'column'
