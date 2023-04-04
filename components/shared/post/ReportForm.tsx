@@ -24,11 +24,7 @@ const ReportForm =()=>{
     }
 
     return(
-        <Form styles={{width:'100%'}}>
-            <Input/>
-            <Input/>
-            <Button.Primary/>
-        </Form>
+        <Skeleton/>
     )
 }
 

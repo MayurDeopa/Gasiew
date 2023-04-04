@@ -11,7 +11,7 @@ export default function Home() {
 
 
   const router = useRouter()
-  const {gas} = router.query
+  const {gas}:any = router.query
 
 
   return (
