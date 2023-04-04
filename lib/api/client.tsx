@@ -25,7 +25,7 @@ const client =async({url,method='get',payload,token,config}:clientProps)=>{
         ...config
     }
     try{
-        const response = await fetch(`${process.env.API_URL || 'https://tubular-pavlova-2eb657.netlify.app/'}${url}`,customConfig)
+        const response = await fetch(`${process.env.API_URL || 'https://gasiew-server.vercel.app/'}${url}`,customConfig)
         data = await response.json()
         err = data.error || data.message
         success = response.ok
