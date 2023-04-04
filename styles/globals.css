@@ -77,7 +77,7 @@
 
   --button-outline-width:2px;
 
-  --overlay-bg:rgb(0, 0, 0,0.7);
+  --overlay-bg:rgba(0, 0, 0, 0.7);
 
   /*screen breakpoints*/
 

@@ -21,19 +21,19 @@
 }
 
 .modal{
-    overflow-y: auto;
     background-color: var(--accent-3);
     border-radius: var(--border-radius-1);
+    animation: mountModal 0.3s ease-in-out;
 }
 
 .drawer{
-    overflow-y: auto;
     position: fixed;
     max-width: 100%;
     z-index: 1000;
     background-color: var(--accent-3);
     border-radius: var(--border-radius-1);
     transition: 0.3s ease-in-out;
+    
 }
 
 .topAnimation{
@@ -106,5 +106,16 @@
     to{
         opacity: 1;
         top: 0;
+    }
+}
+
+@keyframes mountModal {
+    from{
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
     }
 }

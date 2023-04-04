@@ -47,8 +47,8 @@ const ChangeAvatarForm:React.FC<ChangAvatarFormProps> = ({data})=>{
     return(
         <Form styles={{boxShadow:'none',justifyContent:'center'}} action={handleSubmit}>
             <Avatar src={imageSource}/>
-            <input type='file' onChange={handleImageChange} required/>
-            <Button.Primary text="Save" styles={{width:'7rem'}}  type="submit" loading={isLoading} disabled={!selectedImage.image}/>
+            <input type='file' onChange={handleImageChange} required style={{width:'100%'}}/>
+            <Button.Primary text="Upload" styles={{width:'7rem'}}  type="submit" loading={isLoading} disabled={!selectedImage.image}/>
             {err && <p>{err}</p>}
         </Form>
     )

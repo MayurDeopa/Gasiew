@@ -4,3 +4,41 @@
     width: 100%;
     gap: 8px;
 }
+
+
+/*
+    dropdown
+*/
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown__toggle {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .dropdown__menu {
+    padding: 10px 0;
+    width: 20rem;
+    max-width: 100%;
+    z-index: 1;
+  }
+  
+  .dropdown__item {
+    display: block;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .dropdown__item:hover {
+    background-color: #f0f0f0;
+  }
+  

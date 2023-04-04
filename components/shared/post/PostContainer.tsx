@@ -3,6 +3,7 @@ import { useScreenWidth } from "@/lib/hooks"
 import React, { ReactNode, useState } from "react"
 
 import NextStyles from '../../../styles/post.module.css'
+import PostOptions from "./PostOptions"
 
 interface PostProps{
     image?:ReactNode
@@ -14,6 +15,7 @@ const PostContainer:React.FC<PostProps> =({image,info,action})=>{
 
     const width = useScreenWidth()
     const mountMobileComponents = width<=720
+    const [openOptions,setOpenOptions] = useState(false)
     const [openComments,setOpenComments] = useState(false)
 
     return(
@@ -45,6 +47,8 @@ const PostContainer:React.FC<PostProps> =({image,info,action})=>{
                     {action}
              </Drawer>
              )}
+             
+             <PostOptions open={openOptions} onClick={()=>setOpenOptions(!openOptions)}/>
        </div>
 
 

@@ -1,6 +1,6 @@
 
 .container{
-   
+   position: relative;
 }
 
 .profile_card{
@@ -18,4 +18,10 @@
 
 .profile_data{
     display: flex;
+}
+
+@media screen and (max-width:720px) {
+    .profile_data{
+        flex-direction: column;
+    }
 }
