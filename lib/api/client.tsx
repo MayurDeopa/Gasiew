@@ -1,4 +1,5 @@
 
+const devEnv = process.env.NEXT_PUBLIC_NODE_ENV =="development"
 
 export interface clientProps{
     url:string,
@@ -25,7 +26,7 @@ const client =async({url,method='get',payload,token,config}:clientProps)=>{
         ...config
     }
     try{
-        const response = await fetch(`${process.env.API_URL || 'https://gasiew-server.vercel.app/'}${url}`,customConfig)
+        const response = await fetch(`${devEnv? process.env.NEXT_PUBLIC_DEV_API_URL :process.env.NEXT_PUBLIC_PROD_API_URL}/${url}`,customConfig)
         data = await response.json()
         err = data.error || data.message
         success = response.ok
@@ -34,7 +35,11 @@ const client =async({url,method='get',payload,token,config}:clientProps)=>{
         success = false
     } 
 
-    if(!data) success = false , err ='Something went wrong'
+    if(!data){
+        console.log(err)
+        success = false , err ='Something went wrong'
+        
+    }
     loading = false
     return {data,success,err,loading}
 }
