@@ -1,31 +1,25 @@
-import Skeleton from '@/components/feedback/skeleton/Skeleton';
+import { LoadingDots } from '@/components/feedback';
 import { useAuthState } from '@/context/auth/AuthProvider';
-import React, { useState, useEffect, ComponentType } from 'react';
-
-interface AuthProps {
-  authenticated: boolean;
-}
-
-const withAuth = <P extends AuthProps>(
-  WrappedComponent: ComponentType<P>
-): ComponentType<Omit<P, keyof AuthProps>> => {
-  const AuthenticatedComponent = (props: Omit<P, keyof AuthProps>) => {
-    const {isAuthorized,isLoading,isError} = useAuthState()
+import React, { ComponentType, FC } from 'react';
 
 
-    if(isLoading){
-        return <Skeleton/>  
-    }
-
-    if (!isAuthorized) {
-      return <div>Please login</div>;
-    }
+const withAuth = (
+  Component: ComponentType,
+): FC => (props) => {
+    const {isAuthorized,isLoading} = useAuthState()
     
 
-    return <WrappedComponent {...(props as P)}/>;
-  };
+    if(isLoading){
+      return <LoadingDots color='secondary'/>
+    }
 
-  return AuthenticatedComponent;
-};
+    
+    if (isAuthorized) {
+      return <Component {...props} />;
+    }
+
+    return <p>Please login</p>
+    
+  };
 
 export default withAuth;
