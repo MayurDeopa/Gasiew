@@ -25,7 +25,7 @@ const client =async({url,method='get',payload,token,config}:clientProps)=>{
         ...config
     }
     try{
-        const response = await fetch(`${process.env.API_URL || 'http://localhost:8000/'}${url}`,customConfig)
+        const response = await fetch(`${process.env.API_URL || 'https://gasiew-server-production.up.railway.app/'}${url}`,customConfig)
         data = await response.json()
         err = data.error || data.message
         success = response.ok
