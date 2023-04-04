@@ -6,13 +6,14 @@ import { useAuthState } from "@/context/auth/AuthProvider";
 
 const LoginButton =({text = "Login",width="5rem"})=>{
     const modals = useGlobalModals()
-    const {isLoading} = useAuthState()
+    const {isLoading,isAuthorized} = useAuthState()
     return(
         <Button.Primary 
             loading={isLoading} 
             action={()=>modals.setShowAuthModal(true)} 
             text={text} 
             styles={{width:width}}
+            disabled={isAuthorized}
         />
     )
 }
