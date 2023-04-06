@@ -34,6 +34,8 @@ const CreateModal:React.FC<CreateModalProps> = (props)=>{
 
     const hanldeChange = (e:any)=>{
         setFile(e.target.files[0])
+        console.log(e.target.files[0])
+        console.log(URL.createObjectURL(e.target.files[0]))
         let url = URL.createObjectURL(e.target.files[0])
         setFileUrl(url)
         setUploaded(true)

@@ -30,7 +30,7 @@ const PostOptions:React.FC<PostOptionsProps> =({open,onClick})=>{
 
     return(
         <React.Fragment>
-            <button  style={{position:'absolute',right:'10px',top:'10px',cursor:'pointer'}} onFocus={()=>setShow(true)} onBlur={()=>setShow(false)} onClick={()=>setShow(!show)}>:</button>
+            <button  style={{position:'absolute',right:'10px',top:'10px',cursor:'pointer'}} onFocus={()=>setShow(true)} onBlur={()=>setShow(false)}>:</button>
                      
             <Dropdown open={show}  items={options} style={{position:'absolute',right:'10px',top:'30px'}}/>
             
