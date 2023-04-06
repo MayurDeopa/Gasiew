@@ -34,10 +34,6 @@ const CreateModal:React.FC<CreateModalProps> = (props)=>{
 
     const hanldeChange = (e:any)=>{
         setFile(e.target.files[0])
-        console.log(e.target.files[0])
-        console.log(URL.createObjectURL(e.target.files[0]))
-        let url = URL.createObjectURL(e.target.files[0])
-        setFileUrl(url)
         setUploaded(true)
     }
 
@@ -58,7 +54,7 @@ const CreateModal:React.FC<CreateModalProps> = (props)=>{
     return(
         <Modal open={open} onClose={onClose}>
             <Form.Form action={uploadImageToBucket} styles={{width:'35rem'}}>
-            {
+            {/*
                 hasUploaded
                 ?
                 <Container style={{position:'relative',minHeight:'10rem'}} >
@@ -74,7 +70,17 @@ const CreateModal:React.FC<CreateModalProps> = (props)=>{
                     action={hanldeChange}
                     required
                 />
-                }
+    */}
+                <Input
+                    name="Image"
+                    placeholder="Image"
+                    value={''}
+                    forLabel={'image'}
+                    type='file'
+                    action={hanldeChange}
+                    required
+                    disabled={hasUploaded}
+                />
                 <Input
                     name="title"
                     placeholder="Title"
