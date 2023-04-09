@@ -19,7 +19,7 @@ export const uploadImage = async(params:uploadImageProps)=>{
         })
     }
     catch(err){
-        console.log(err)
+        alert(err)
         error = err
     }
     return {imageData,error}

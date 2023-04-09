@@ -39,7 +39,6 @@ const useUserFeatures =()=>{
             file:newImage.file,
             fileName:user.username
         })
-        console.log(imageData)
         if(error){
             setErr(error)
         }
