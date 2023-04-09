@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 
-import Dropdown,{DropDownOption} from '@/components/ui/DropDown'
+import Dropdown from '@/components/ui/DropDown'
+import { Button } from '@/components/form'
 
 
 interface PostOptionsProps{
@@ -30,7 +31,7 @@ const PostOptions:React.FC<PostOptionsProps> =({open,onClick})=>{
 
     return(
         <React.Fragment>
-            <button  style={{position:'absolute',right:'10px',top:'10px',cursor:'pointer'}} onFocus={()=>setShow(true)} onBlur={()=>setShow(false)}>:</button>
+            <Button.Secondary text=':' action={()=>setShow(!show)} styles={{position:'absolute',right:'10px',top:'10px',cursor:'pointer',fontWeight:'bolder',height:'1.4rem',padding:'var(--space-2)'}}/>
                      
             <Dropdown open={show}  items={options} style={{position:'absolute',right:'10px',top:'30px'}}/>
             

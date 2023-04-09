@@ -5,10 +5,8 @@ import Modal from "@/components/overlays/modal";
 import { useAuthState } from "@/context/auth/AuthProvider";
 import { uploadPost } from "@/context/user/actions";
 import { useUserActions, useUserState } from "@/context/user/UserProvider";
-import { uploadImage } from "@/lib/imagekit";
 import Image from "next/image";
 import React, { useState } from "react";
-import {MdTitle} from 'react-icons/md'
 
 
 export interface CreateModalProps{
@@ -23,7 +21,7 @@ const CreateModal:React.FC<CreateModalProps> = (props)=>{
         onClose
     } = props
 
-    const {token} = useAuthState()
+    const {token,user} = useAuthState()
     const {dispatch} = useUserActions()
     const {isLoading} = useUserState()
     const [title,setTitle] = useState('')
@@ -41,9 +39,9 @@ const CreateModal:React.FC<CreateModalProps> = (props)=>{
 
     const uploadImageToBucket = async()=>{
         await uploadPost(dispatch,{
-            file:{
-                file:file,
-                fileName:'gas'
+            image:{
+                image:file,
+                name:user.username
             },
             token:token,
             post:{
@@ -51,6 +49,7 @@ const CreateModal:React.FC<CreateModalProps> = (props)=>{
                 caption:caption
             }
         })
+        onClose()
     }
 
     return(

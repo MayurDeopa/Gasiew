@@ -4,15 +4,16 @@ const devEnv = process.env.NEXT_PUBLIC_NODE_ENV =="development"
 export interface clientProps{
     url:string,
     method?:string,
-    payload?:{}
+    payload?:any
     config?:{}
+    contentType?:string
     token?:string
     query?:string
     value?:string
+    stringify?:boolean
 }
 
-const client =async({url,method='get',payload,token,config}:clientProps)=>{
-
+const client =async({url,method='get',payload,token,contentType,stringify=true,config}:clientProps)=>{
     let data
     let success:boolean
     let err 
@@ -21,8 +22,8 @@ const client =async({url,method='get',payload,token,config}:clientProps)=>{
         'method':method,
         "headers":{
             "Authorization": token ? `Bearer ${token}` : '',
-            "Content-Type" :payload?"application/json":''},
-        'body':JSON.stringify(payload),
+            "Content-Type": contentType?contentType:payload?"application/json":''},
+        'body':stringify?JSON.stringify(payload):payload,
         ...config
     }
     try{

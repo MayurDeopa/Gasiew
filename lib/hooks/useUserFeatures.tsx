@@ -2,6 +2,7 @@ import { useAuthState } from "@/context/auth/AuthProvider"
 import { useState ,useEffect} from "react"
 import { client, user } from "../api"
 import { uploadImage } from "../imagekit"
+import { imageToBase64 } from "../imageToBase64"
 
 
 interface commentProps{
@@ -10,12 +11,8 @@ interface commentProps{
 }
 
 interface updateUserAvatarProps{
-    oldImage:{
-        id:string
-    }
-    newImage:{
-        file:any
-    }
+    oldImageId:string
+    newImage:File
 }
 
 const useUserFeatures =()=>{
@@ -33,23 +30,14 @@ const useUserFeatures =()=>{
     
 
     const updateUserAvatar = async(params:updateUserAvatarProps)=>{
-        const {oldImage,newImage} = params
+        const {oldImageId,newImage} = params
         setIsLoading(true)
-       const {imageData,error} =  await uploadImage({
-            file:newImage.file,
-            fileName:user.username
-        })
-        if(error){
-            setErr(error)
-        }
-        else{
-            let payload= {
-                oldImageId:oldImage.id,
-                newImage:{
-                    height:imageData!.height,
-                    width:imageData!.width,
-                    url:imageData!.url,
-                    fileId:imageData!.fileId
+        const base64 = await imageToBase64(newImage)
+            let payload = {
+                id:oldImageId,
+                image:{
+                    image:base64,
+                    name:user.username
                 }
             }
             const {data,err} = await client({url:'user/account/update/avatar',method:'post',payload:payload,token:token})
@@ -60,7 +48,7 @@ const useUserFeatures =()=>{
                 setAsyncData(data.data)
             }
             setIsLoading(false)
-        }
+        
     }
 
     const isProfileCurrentUser = (userId:string)=>user.id == userId

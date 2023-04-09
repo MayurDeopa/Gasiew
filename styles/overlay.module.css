@@ -24,6 +24,7 @@
     background-color: var(--accent-3);
     border-radius: var(--border-radius-1);
     animation: mountModal 0.3s ease-in-out;
+    border-radius: var(--border-radius-1);
 }
 
 .drawer{
