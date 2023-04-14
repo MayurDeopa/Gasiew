@@ -83,7 +83,6 @@
 
 .options_wrapper{
     width: 7rem;
-    max-width: 100%;
     opacity: 0;
     transform: translate(5px,-10px);
     transition: 0.3s ease-in-out;
@@ -106,6 +105,7 @@
     display: grid;
     place-items: center;
     cursor: pointer;
+    font-size: 14px;
     transition: 0.15s ease-in-out;
 }
 

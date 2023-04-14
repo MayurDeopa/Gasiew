@@ -37,7 +37,7 @@ export const DropDownOption:React.FC<DropDownOptionProps>=({item,onClose,showBac
   )
 }
 
- const DropdownMenu:React.FC<DropDownProps>=({open,onClick,items,style})=> {
+ const DropdownMenu:React.FC<DropDownProps>=({open,items,style})=> {
   
 
   const hasTransitioned = useTransition(open,300)

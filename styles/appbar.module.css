@@ -16,9 +16,19 @@
     height: 100%;
     width: 100%;
     max-width: var(--app-width);
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     align-items: center;
     padding: 0 var(--space-2);
+    gap: var(--space-6);
 }
 
+.section{
+    display: flex;
+    gap: var(--space-6);
+}
+
+.user_profile_wrapper{
+    position: relative;
+    cursor: pointer;
+}

@@ -5,10 +5,17 @@ import styles from '../../styles/appbar.module.css'
 import LoginButton from '../common/auth/LoginButton';
 import { useAuthState } from '@/context/auth/AuthProvider';
 import { Button } from '../form';
+import { ReactNode } from 'react';
 
 
+export interface AppBarProps{
+    action?:ReactNode
+    links?:ReactNode
+    user?:ReactNode
+}
 
-const AppBar =()=>{
+
+const AppBar:React.FC<AppBarProps> =({action,links,user})=>{
 
     const {isAuthorized} = useAuthState()
     const {setShowCreateModal,showCreateModal} = useGlobalModals()
@@ -16,7 +23,15 @@ const AppBar =()=>{
     return(
         <div className={styles.wrapper}>
             <nav className={styles.container}>
-                {isAuthorized?<Button.Primary text='Create' action={()=>setShowCreateModal(!showCreateModal)} styles={{width:'5rem'}}/>:<LoginButton />}
+                <section className={styles.section}>
+                    {isAuthorized?<Button.Primary text='Create' action={()=>setShowCreateModal(!showCreateModal)} styles={{width:'5rem'}}/>:<LoginButton />}
+                </section>
+                <section className={styles.section}>
+                    {links}
+                </section>
+                <section className={styles.section}>
+                    {user}
+                </section>
             </nav>
         </div>
     )

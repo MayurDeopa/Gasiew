@@ -33,7 +33,6 @@ const ChangeAvatarForm:React.FC<ChangAvatarFormProps> = ({data})=>{
 
 
     const handleSubmit = async()=>{
-        console.log(selectedImage.image)
         await updateUserAvatar({
             oldImageId:assets.fileId,
             newImage:selectedImage.image

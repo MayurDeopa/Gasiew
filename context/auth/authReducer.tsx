@@ -1,15 +1,28 @@
 
-
+export interface currentUserData{
+    email:string
+    id:string
+    username:string
+    assets:{
+        id:string
+        height:number
+        width:number
+        avatar_url:string
+        fileId:string
+    }
+}
 
 export interface AuthContextProps{
     isAuthorized:boolean
-    user:any
+    user:currentUserData
     token:string
     isLoading:boolean
     isError:boolean
     error:string
 
 }
+
+
 
 export const authContextInitialState ={
     isAuthorized:false,

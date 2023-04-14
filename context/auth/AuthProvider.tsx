@@ -39,6 +39,8 @@ const AuthProvider =({children}:AuthProviderProps)=>{
         }
     },[])
 
+    console.log(authState)
+
     return(
         <AuthStateContext.Provider value={authState}>
             <AuthActionContext.Provider value={{dispatch}}>

@@ -1,0 +1,1 @@
+export {default as UserProfileIcon} from './UserProfile'
