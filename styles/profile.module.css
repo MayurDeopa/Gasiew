@@ -1,9 +1,21 @@
 
 .container{
+    
    position: relative;
+   
+}
+
+
+.banner{
+    position: fixed;
+    left: 0;
+    top: var(--app-bar-height);
+    right: 0;
+    height: 17rem;
 }
 
 .profile_card{
+
     width: 20rem;
     height: 25rem;
     display: flex;
@@ -17,7 +29,11 @@
 }
 
 .profile_data{
+    position: relative;
+    margin-top: 17rem;
     display: flex;
+    z-index: 20;
+    background-color: var(--accent-2);
 }
 
 @media screen and (max-width:720px) {

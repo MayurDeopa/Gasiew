@@ -12,7 +12,7 @@ export interface UserContainerProps{
 const UserContainer:React.FC<UserContainerProps> =({data})=>{
     return(
         <div className={NextStyles.container}>
-            <NewImage imageProps={{fill:true,alt:'some',src:data.banner.url,style:{objectFit:'cover'}}} containerProps={{style:{height:'17rem',width:'100%'}}}/>
+            <NewImage imageProps={{fill:true,alt:'some',src:data.banner.url,style:{objectFit:'cover'}}} containerProps={{className:NextStyles.banner}} />
            <div className={NextStyles.profile_data}>
            <ProfileDate 
                 image={<NewImage imageProps={{height:120,width:120,alt:'some',src:data.assets.avatar_url,style:{objectFit:'cover'}}} containerProps={{style:{height:'120px',width:'120px',borderRadius:'50%',marginTop:'-20%'}}}/>}
