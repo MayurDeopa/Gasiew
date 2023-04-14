@@ -28,7 +28,12 @@
     gap: var(--space-6);
 }
 
+.section:last-child{
+    justify-content: flex-end;
+}
+
 .user_profile_wrapper{
     position: relative;
     cursor: pointer;
 }
+
