@@ -26,7 +26,18 @@ export interface AuthContextProps{
 
 export const authContextInitialState ={
     isAuthorized:false,
-    user:{},
+    user:{
+        email:"",
+        id:"",
+        username:"",
+        assets:{
+            id:"",
+            height:0,
+            width:0,
+            avatar_url:"",
+            fileId:""
+        }
+    },
     token:'',
     isLoading:false,
     isError:false,
