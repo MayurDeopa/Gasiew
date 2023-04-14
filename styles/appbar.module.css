@@ -37,3 +37,16 @@
     cursor: pointer;
 }
 
+.user_image{
+    height: 2.3rem;
+    width: 2.3rem;
+    border-radius: 50%;
+    object-fit: cover;
+    outline: solid 2px transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.user_image:focus{
+    outline: solid 2px var(--primary-shade-1);
+}
+

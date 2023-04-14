@@ -47,5 +47,4 @@ export const bootstrapUser =async(dispatch:React.Dispatch<any>)=>{
 
 export const logoutUser =async(dispatch:React.Dispatch<any>)=>{
     deleteAuth()
-    dispatch({type:'LOGOUT'})
 }

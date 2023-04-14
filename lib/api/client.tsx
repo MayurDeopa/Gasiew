@@ -37,7 +37,6 @@ const client =async({url,method='get',payload,token,contentType,stringify=true,c
     } 
 
     if(!data){
-        console.log(err)
         success = false , err ='Something went wrong'
         
     }

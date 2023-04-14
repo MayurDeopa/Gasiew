@@ -156,14 +156,10 @@ const Stack:React.FC<StackProps> =({
                 }
                     
                 </div>
-                <Container
-                    style={{
-                        justifyContent:'center'
-                    }}
-                >
+                <div className={NextStyles.content}>
                     
                     {children}
-                </Container>
+                </div >
             </div>
         )
     }

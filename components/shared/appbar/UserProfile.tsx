@@ -29,7 +29,7 @@ const userOptions = [
 const UserProfile:React.FC =()=>{
 
     const [show,setShow] = useState(false)
-    const {isAuthorized,isLoading,user} = useAuthState()
+    const {isAuthorized,isLoading,user,error} = useAuthState()
 
     const {assets} = user
 
@@ -41,7 +41,7 @@ const UserProfile:React.FC =()=>{
     return(
         <ClickAwayListener onClickAway={()=>setShow(false)}>
             <div className={NextStyles.user_profile_wrapper} onClick={()=>setShow(!show)}>
-                <Avatar src={assets.avatar_url} height='2rem' width='2rem'/>
+                <input type='image' src={assets.avatar_url}  className={NextStyles.user_image}/>
                 <Dropdown open={show}  style={{position:'absolute',right:'0px',top:'45px',width:'8rem'}}>
                     <DropDownOption>
                         <Button.DropwDownLink url={`/u/${user.username}`} text='Profile' styles={{width:'100%'}}/>

@@ -50,7 +50,6 @@ export const authContextInitialState ={
             return{
                 ...authState,
                 isAuthorized:false,
-                user:{},
                 isLoading:true,
                 isError:false
             }

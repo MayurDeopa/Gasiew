@@ -29,8 +29,8 @@ const Layout:React.FC<LayoutProps> =(props)=>{
                     user={<UserProfileIcon/>} 
                     links={
                         <React.Fragment>
-                            <Button.LinkBtn text="Explore" url="/?gas=0"/>
-                            <Button.LinkBtn text="Search" url="/?gas=1"/>
+                            <Button.DropwDownLink text="Explore" url="/?gas=0"/>
+                            <Button.DropwDownLink text="Search" url="/?gas=1"/>
                         </React.Fragment>
                     }
                 />
