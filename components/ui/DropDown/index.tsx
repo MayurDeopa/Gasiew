@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect, ReactNode, CSSProperties } from 'react';
 
-import { Modal } from '@/components/overlays';
 
 import NextStyles from '../../../styles/post.module.css'
 import { useTransition } from '@/lib/hooks';
@@ -15,29 +14,30 @@ interface DropDownItemsProp{
 interface DropDownProps{
     open:boolean
     onClick?:()=>void
-    items:DropDownItemsProp[]
     style?:CSSProperties
+    children:ReactNode
 }
 
-interface DropDownOptionProps extends React.HtmlHTMLAttributes<"div"> {
-  item:DropDownItemsProp
-  onClose?:()=>void
-  showBack?:boolean
+interface DropDownOptionProps{
+  
+  children:ReactNode
 
 }
 
-export const DropDownOption:React.FC<DropDownOptionProps>=({item,onClose,showBack=false})=>{
+
+
+export const DropDownOption:React.FC<DropDownOptionProps>=({children})=>{
 
 
 
   return (
     <li className={NextStyles.option}>
-      {item.title}
+      {children}
     </li>
   )
 }
 
- const DropdownMenu:React.FC<DropDownProps>=({open,items,style})=> {
+ const DropdownMenu:React.FC<DropDownProps>=({open,style,children})=> {
   
 
   const hasTransitioned = useTransition(open,300)
@@ -48,9 +48,7 @@ export const DropDownOption:React.FC<DropDownOptionProps>=({item,onClose,showBac
         <div style={{...style}} className={wrapperClass}>
           {hasTransitioned && (
             <ul className={NextStyles.options_container}>
-              {items.map((i,index)=>{
-                return <DropDownOption item={i} key={index}/>
-              })}
+              {children}
             </ul>
           )}
         </div>

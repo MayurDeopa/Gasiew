@@ -6,4 +6,7 @@ export const saveAuth =(token:string)=>{
 
 export const getToken=()=>localStorage.getItem(TOKEN_KEY)
 
-export const deleteAuth =()=>localStorage.removeItem(TOKEN_KEY)
+export const deleteAuth =()=>{
+    window.location.href = '/'
+    localStorage.removeItem(TOKEN_KEY)
+}
