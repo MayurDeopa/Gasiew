@@ -13,8 +13,8 @@ interface PostProps{
 
 const PostContainer:React.FC<PostProps> =({image,info,action})=>{
 
-    const width = useScreenWidth()
-    const mountMobileComponents = width<=720
+    const {windowWidth} = useScreenWidth()
+    const mountMobileComponents = windowWidth<=720
     const [openOptions,setOpenOptions] = useState(false)
     const [openComments,setOpenComments] = useState(false)
 

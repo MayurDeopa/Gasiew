@@ -10,6 +10,8 @@ const useScreenWidth=()=> {
 
     const resize = () => setWindowWidth(getWidth());
 
+    const isMobileScreen = windowWidth<544
+
     useEffect(() => {
         if (isWindow) {
             setWindowWidth(getWidth());
@@ -21,7 +23,7 @@ const useScreenWidth=()=> {
     //eslint-disable-next-line
     }, [isWindow]);
 
-    return windowWidth;
+    return {windowWidth,isMobileScreen};
 }
 
 export default useScreenWidth;

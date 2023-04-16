@@ -45,7 +45,6 @@ const Post:React.FC<PostProps> =(props)=>{
 
 
 
-
     return(
         <PostContainer
             image={<PostImage src={image.url} alt={post.caption} height={image.height} width={image.width}/>}

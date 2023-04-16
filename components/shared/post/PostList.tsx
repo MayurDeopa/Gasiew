@@ -20,15 +20,17 @@ const PostList:React.FC<PostListProps> = ({posts})=>{
 
 
     if(posts){
-        <Container style={{flexDirection:'column',gap:'5rem'}}>
-            {posts.map((p:any,i:number)=>{
-                return(
-                    <Link href={`/p/${p.id}`} key={i}>
-                        <PostListPost id={p.id} title={p.title} caption={p.caption} image={p.assets} user={{username:p.user.username}}/>
-                    </Link>
-                )
-            })}
-        </Container>
+        return (
+            <Container style={{flexDirection:'column',gap:'0'}}>
+                {posts.map((p:any,i:number)=>{
+                    return(
+                        <Link href={`/p/${p.id}`} key={i}>
+                            <PostListPost id={p.id} title={p.title} caption={p.caption} image={p.assets} user={p.user}/>
+                        </Link>
+                    )
+                })}
+            </Container>
+        )
     }
 
     const {token} = useAuthState()
@@ -52,7 +54,7 @@ const PostList:React.FC<PostListProps> = ({posts})=>{
             {data.data.map((p:any,i:number)=>{
                 return(
                     <Link href={`/p/${p.id}`} key={i} style={{width:'inherit'}}>
-                        <PostListPost id={p.id} title={p.title} caption={p.caption} image={p.assets} user={{username:p.user.username}}/>
+                        <PostListPost id={p.id} title={p.title} caption={p.caption} image={p.assets} user={p.user}/>
                     </Link>
                 )
             })}

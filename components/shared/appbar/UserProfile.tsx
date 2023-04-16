@@ -11,6 +11,7 @@ import NextStyles from '../../../styles/appbar.module.css'
 import ClickAwayListener from '@/components/misc/clickaway'
 import { Button } from '@/components/form'
 import LogoutButton from '@/components/common/auth/LogoutButton'
+import LoginButton from '@/components/common/auth/LoginButton'
 
 
 const userOptions = [
@@ -57,7 +58,7 @@ const UserProfile:React.FC =()=>{
         </ClickAwayListener>
     )
   }
-  return <React.Fragment/>
+  return <LoginButton/>
 
 }
 

@@ -23,7 +23,7 @@ const PostPage =()=>{
     return(
        <Post 
             post={{id:data.data.id,title:data.data.title,caption:data.data.caption,comments:data.data.comments}} 
-            user={{username:data.data.user.username}}
+            user={data.data.user}
             image={data.data.assets}
         />
     )

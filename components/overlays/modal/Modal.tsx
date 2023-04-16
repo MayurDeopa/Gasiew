@@ -29,7 +29,7 @@ const Modal:React.FC<ModalProps> = (props)=>{
         open,
     }= props
 
-    const windowWidth = useScreenWidth()
+    const {isMobileScreen} = useScreenWidth()
 
     const hasTransitioned = useTransition(open,300)
 
@@ -38,7 +38,7 @@ const Modal:React.FC<ModalProps> = (props)=>{
     
     
 
-    if(windowWidth<544){
+    if(isMobileScreen){
         return(
             <Drawer 
                 onClose={onClose}

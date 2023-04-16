@@ -10,7 +10,6 @@ interface AppContextProps{
 
 const AppContext =({children}:AppContextProps)=>{
     return(
-        <ErrorBoundary>
             <AuthProvider>
                 <UserProvider>
                     <Layout>
@@ -18,7 +17,6 @@ const AppContext =({children}:AppContextProps)=>{
                     </Layout>
                 </UserProvider>
             </AuthProvider>
-        </ErrorBoundary>
     )
 }
 
