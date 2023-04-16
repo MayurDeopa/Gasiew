@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 const UserPage =()=>{
     const {username} = useRouter().query
-    const {data,loading,error} = useAsync({url:`user/${username}`,method:'get'})
+    const {data,loading,error} = useAsync({url:`user/${username}`,method:'get',changes:[username]})
 
     if(loading){
         return <Skeleton height="40rem" width="100%"/>

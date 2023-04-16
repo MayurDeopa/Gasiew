@@ -9,12 +9,13 @@ export interface useAsyncParams{
     method:string
     token?:string
     config?:{}
+    changes?:any[]
 }
 
 const useAsync =(params:useAsyncParams)=>{
 
     const router = useRouter()
-    const {url,payload,token,config,method} = params
+    const {url,payload,token,config,method,changes=[]} = params
 
     const [loading,setLoading] = useState(true)
     const [data,setData] = useState<any>()
@@ -36,7 +37,7 @@ const useAsync =(params:useAsyncParams)=>{
             return
         }
         wrapperFunction()
-    },[router.isReady])
+    },[router.isReady,...changes!])
 
     return {data,loading,error}
 }
