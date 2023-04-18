@@ -26,11 +26,6 @@ const AccountWrapper:React.FC<AccountWrapper> = ({children})=>{
                     label:'Security',
                     key:1,
                     url:'/account/security'
-                },
-                {
-                    label:'Gas',
-                    key:2,
-                    url:'/account/gas'
                 }
             ]} withLink link="/account">
                 {children}

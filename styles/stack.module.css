@@ -74,6 +74,9 @@
         width: 100%;
     }
     .wrapper{
-        gap: 0;
+        flex-direction: column;
+    }
+    .header_wrapper{
+        width: 100%;
     }
 }

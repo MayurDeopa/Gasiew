@@ -85,7 +85,7 @@ const StackLabelWithLink:React.FC<StackLabelWithLinkProps> =({
 
     const activeClass = active?`${NextStyles.label} ${NextStyles.active}`:NextStyles.label
     return(
-            <Link href={{pathname:link,query:queryData}} style={{width:'100%'}}>
+            <Link href={{pathname:link,query:queryData}} style={{width:'100%',display:'grid',placeItems:'center'}}>
                 <button
                     disabled={disabled}
                     className={activeClass}

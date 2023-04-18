@@ -51,9 +51,31 @@ const useUserFeatures =()=>{
         
     }
 
+    const updateUserBanner = async(params:updateUserAvatarProps)=>{
+        const {oldImageId,newImage} = params
+        setIsLoading(true)
+        const base64 = await imageToBase64(newImage)
+            let payload = {
+                id:oldImageId,
+                image:{
+                    image:base64,
+                    name:user.username
+                }
+            }
+            const {data,err} = await client({url:'user/account/update/banner',method:'post',payload:payload,token:token})
+            if(err){
+                setErr(err)
+            }
+            else{
+                setAsyncData(data.data)
+            }
+            setIsLoading(false)
+        
+    }
+
     const isProfileCurrentUser = (userId:string)=>user.id == userId
 
-    return {isProfileCurrentUser,postComment,isLoading,updateUserAvatar,asyncData,err}
+    return {isProfileCurrentUser,postComment,isLoading,updateUserAvatar,asyncData,err,updateUserBanner}
 }
 
 export default useUserFeatures
