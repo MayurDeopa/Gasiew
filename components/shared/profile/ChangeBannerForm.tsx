@@ -49,7 +49,7 @@ const ChangeBannerForm:React.FC<ChangeBannerFormProps> = ({data})=>{
             <input type='file' onChange={handleImageChange} required style={{width:'100%'}}/>
             <Container>
                 <Button.Primary text="Upload" styles={{width:'7rem'}}  type="submit" loading={isLoading} disabled={!selectedImage.image}/>
-                <Button.Secondary text="Preview" styles={{width:'7rem'}}  loading={isLoading} disabled={!selectedImage.image} action={()=>togglePreview(!openPreview)}/>
+                <Button.Secondary text="Preview" styles={{width:'7rem'}}   disabled={!selectedImage.image || isLoading} action={()=>togglePreview(!openPreview)}/>
             </Container>
             {err && <p>{err}</p>}
             <ProfilePreviewModal 
