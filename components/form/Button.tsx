@@ -49,11 +49,12 @@ export const Secondary:React.FC<ButtonProps> = (props)=>{
         text="Button",
         action,
         loading = false,
+        disabled=false,
         styles
     } =props
 
     return(
-        <button className={`${NextStyles.wrapper} ${NextStyles.secondary}`} onClick={action} type={type} disabled={loading} style={styles}>
+        <button className={`${NextStyles.wrapper} ${NextStyles.secondary}`} onClick={action} type={type} disabled={disabled} style={styles}>
             {loading?<LoadingDots color='secondary'/>:text}
         </button>
     )

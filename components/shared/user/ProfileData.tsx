@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { ReactNode,CSSProperties } from "react"
 
 import NextStyles from '../../../styles/profile.module.css'
 
@@ -6,15 +6,16 @@ export interface ProfileDataProps{
   image?:ReactNode
   info?:ReactNode
   action?:ReactNode
+  style?:CSSProperties
 }
 
-const ProfileDate:React.FC<ProfileDataProps> =({image,info,action})=>{
+const ProfileData:React.FC<ProfileDataProps> =({image,info,style})=>{
     return(
-        <div className={NextStyles.profile_card}>
+        <div className={NextStyles.profile_card} style={{...style}}>
             {image}
             {info}
         </div>
     )
 }
 
-export default ProfileDate
+export default ProfileData
