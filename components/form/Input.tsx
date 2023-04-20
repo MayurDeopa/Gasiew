@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineCloud, AiOutlineCloudUpload } from "react-icons/ai";
+import { AiOutlineCloudUpload } from "react-icons/ai";
 
 import NextStyles from '../../styles/form.module.css'
 import { Container } from "../misc";
