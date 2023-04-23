@@ -9,6 +9,7 @@ import styles from '../../styles/layout.module.css'
 import Skeleton from "../feedback/skeleton/Skeleton";
 import { Button } from "../form";
 import { UserProfileIcon } from "../shared/appbar";
+import Footer from "./Footer";
 
 interface LayoutProps{
     children:JSX.Element | JSX.Element[]
@@ -37,6 +38,7 @@ const Layout:React.FC<LayoutProps> =(props)=>{
                 <div className={styles.content_container}>
                     {children}
                 </div>
+                <Footer/>
             </GlobalModalsProvider>
         </div>
     )

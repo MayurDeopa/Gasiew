@@ -6,18 +6,20 @@
   --app-width:70rem;
   --app-bar-height:3rem;
 
+  --footer-height:15rem;
+
   /*primary colors*/
 
-  --accent-1:rgb(255, 255, 255);
-  --accent-2:rgb(245, 245, 245);
-  --accent-3:rgb(224, 224, 224);
+  --accent-1:rgb(31, 31, 31);
+  --accent-2:rgb(40, 40, 40);
+  --accent-3:rgb(55, 55, 55);
   --accent-4:rgb(200, 200, 200);
   --accent-5:rgb(175, 175, 175);
   --accent-6:rgb(156, 156, 156);
   --accent-7:rgb(83, 83, 83);
-  --accent-8:rgb(68, 68, 68);
-  --accent-9:rgb(38, 37, 37);
-  --accent-10:rgb(0, 0, 0);
+  --accent-8:rgb(225, 225, 225);
+  --accent-9:rgb(241, 241, 241);
+  --accent-10:rgb(255, 255, 255);
 
   --primary-shade-0:rgb(0, 106, 255,0.7);
   --primary-shade-1:rgb(0, 72, 173);
@@ -61,7 +63,7 @@
   /*box shadows*/
 
   --box-shadow-1:var(--accent-1) 0px 2px 5px -1px, var(--accent-8) 0px 1px 3px -1px;
-  --box-shadow-2: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  --box-shadow-2: var(--accent-1) 0px 1px 3px 0px, var(--accent-8) 0px 0px 0px 1px;
 
   /*misc*/
 

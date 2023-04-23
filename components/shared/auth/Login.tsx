@@ -21,7 +21,7 @@ const Login = ()=>{
     }
 
     return(
-        <Form.Form styles={{width:'100%',justifyContent:'center'}} action={action}>
+        <Form.Form styles={{width:'100%',justifyContent:'center',boxShadow:'none'}} action={action}>
             <Form.Input 
                 type={'email'} 
                 prefix={<AiOutlineMail/>} 

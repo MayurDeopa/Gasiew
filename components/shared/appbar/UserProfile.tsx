@@ -12,19 +12,9 @@ import ClickAwayListener from '@/components/misc/clickaway'
 import { Button } from '@/components/form'
 import LogoutButton from '@/components/common/auth/LogoutButton'
 import LoginButton from '@/components/common/auth/LoginButton'
+import ChangeThemeButton from '@/components/common/preference/ChangeThemeButton'
 
 
-const userOptions = [
-    {
-        title:'Profile'
-    },
-    {
-        title:'Settings'
-    },
-    {
-        title:'Log out'
-    }
-]
 
 
 const UserProfile:React.FC =()=>{
@@ -40,9 +30,11 @@ const UserProfile:React.FC =()=>{
   
   if(isAuthorized){
     return(
-        <ClickAwayListener onClickAway={()=>setShow(false)}>
+        
             <div className={NextStyles.user_profile_wrapper} onClick={()=>setShow(!show)}>
+                <ClickAwayListener onClickAway={()=>setShow(false)}>
                 <input type='image' src={assets.avatar_url}  className={NextStyles.user_image}/>
+                
                 <Dropdown open={show}  style={{position:'absolute',right:'0px',top:'45px',width:'8rem'}}>
                     <DropDownOption>
                         <Button.DropwDownLink url={`/u/${user.username}`} text='Profile' styles={{width:'100%'}}/>
@@ -51,11 +43,14 @@ const UserProfile:React.FC =()=>{
                         <Button.DropwDownLink url='/account' text='Settings' styles={{width:'100%'}}/>
                     </DropDownOption>
                     <DropDownOption>
+                        <ChangeThemeButton/>
+                    </DropDownOption>
+                    <DropDownOption>
                         <LogoutButton/>
                     </DropDownOption>
                 </Dropdown>
+                </ClickAwayListener>
             </div>
-        </ClickAwayListener>
     )
   }
   return <LoginButton/>

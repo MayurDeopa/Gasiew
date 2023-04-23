@@ -8,7 +8,6 @@
     align-items: center;
     justify-content: center;
     background-color: var(--accent-1);
-    box-shadow: var(--box-shadow-1);
     z-index: 999;
 }
 

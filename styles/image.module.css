@@ -27,7 +27,7 @@
     position: relative;
     transition: 0.3s ease-in-out;
     border: 0px;
-    background-color: var(--accent-10);
+    background-color: var(--accent-2);
 }
 
 
@@ -120,9 +120,7 @@
 
 }
 
-.avatar{
-    
-}
+
 
 @keyframes fade-up {
     0%{

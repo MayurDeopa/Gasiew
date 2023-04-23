@@ -20,6 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--accent-10);
     background-color: transparent;
     cursor: pointer;
     overflow: hidden;
