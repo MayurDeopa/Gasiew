@@ -5,7 +5,7 @@ import { useState } from "react"
 
 const ChangeThemeButton =()=>{
 
-    const [open,toggle] = useState(false)
+    const [open,toggle] = useState(true)
 
     return(
         <Container style={{justifyContent:'center',alignItems:'center'}} onClick={()=>toggle(!open)}>
