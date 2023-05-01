@@ -10,16 +10,16 @@
 
   /*primary colors*/
 
-  --accent-1:rgb(31, 31, 31);
-  --accent-2:rgb(40, 40, 40);
-  --accent-3:rgb(55, 55, 55);
+  --accent-1:rgb(255, 255, 255);
+  --accent-2:rgb(245, 245, 245);
+  --accent-3:rgb(224, 224, 224);
   --accent-4:rgb(200, 200, 200);
   --accent-5:rgb(175, 175, 175);
   --accent-6:rgb(156, 156, 156);
   --accent-7:rgb(83, 83, 83);
-  --accent-8:rgb(225, 225, 225);
-  --accent-9:rgb(241, 241, 241);
-  --accent-10:rgb(255, 255, 255);
+  --accent-8:rgb(68, 68, 68);
+  --accent-9:rgb(38, 37, 37);
+  --accent-10:rgb(0, 0, 0);
 
   --primary-shade-0:rgb(0, 106, 255,0.7);
   --primary-shade-1:rgb(0, 72, 173);

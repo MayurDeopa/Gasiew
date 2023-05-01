@@ -1,4 +1,4 @@
-import React,{ CSSProperties ,useState} from "react"
+import React,{ CSSProperties ,useRef,useState} from "react"
 
 import { Container } from "@/components/misc"
 
@@ -51,7 +51,14 @@ const TabLabel:React.FC<TabLabelProps> =({
     ...props
 })=>{
 
+
+    const labelRef = useRef(null)
+
     const activeClass = active?`${NextStyles.label} ${NextStyles.active}`:NextStyles.label
+
+    const handleMouseOver = (e: React.MouseEvent<HTMLButtonElement>) => {
+        console.log(labelRef.current);
+    }
 
     return(
             <button
@@ -169,7 +176,11 @@ const Tab:React.FC<TabProps> =({
             className={NextStyles.wrapper}
             style={styles}
         >
-            <Container>
+            <Container
+                style={{
+                    position:'relative'
+                }}
+            >
                 
             {
                 items?.map((i,index)=>{
