@@ -17,7 +17,6 @@ const client =async({url,method='get',payload,token,contentType,stringify=true,c
     let data
     let success:boolean
     let err 
-    let loading = true
     let customConfig = {
         'method':method,
         "headers":{
@@ -40,8 +39,7 @@ const client =async({url,method='get',payload,token,contentType,stringify=true,c
         success = false , err ='Something went wrong'
         
     }
-    loading = false
-    return {data,success,err,loading}
+    return {data,success,err}
 }
 
 
